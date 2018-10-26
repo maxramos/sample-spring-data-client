@@ -1,13 +1,29 @@
 package com.maxaramos.springdatatestclient.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.maxaramos.springdatatestclient.jsonview.UserView;
+
 public class Address {
 
+	@JsonView(UserView.class)
 	private Long id;
+
+	@JsonView(UserView.class)
 	private String address1;
+
+	@JsonView(UserView.class)
 	private String address2;
+
+	@JsonView(UserView.class)
 	private String city;
+
+	@JsonView(UserView.class)
 	private String state;
+
+	@JsonView(UserView.class)
 	private String country;
+
+	@JsonView(UserView.class)
 	private String zipCode;
 
 	public Long getId() {

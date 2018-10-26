@@ -1,25 +1,59 @@
 package com.maxaramos.springdatatestclient.model;
 
 import java.time.LocalDate;
-import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonView;
+import com.maxaramos.springdatatestclient.jsonview.BasicView;
+import com.maxaramos.springdatatestclient.jsonview.UserView;
 
 public class User {
 
+	@JsonView({ BasicView.class, UserView.class })
 	private Long id;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private String username;
+
+	@JsonView(UserView.class)
+	private String password;
+
+	private String rawPassword;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private String role;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private Boolean enabled;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private String email;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private String firstName;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private String lastName;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private Integer age;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private LocalDate birthday;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private GenderType gender;
+
+	@JsonView({ BasicView.class, UserView.class })
 	private String contactNumber;
+
+	@JsonView(UserView.class)
 	private Address address;
-	private User supervisor;
-	private List<User> supervisees;
-	private Department department;
+
+	@JsonView(UserView.class)
+	private String supervisorFullName;
+
+	@JsonView(UserView.class)
+	private String departmentName;
 
 	public Long getId() {
 		return id;
@@ -35,6 +69,22 @@ public class User {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getRawPassword() {
+		return rawPassword;
+	}
+
+	public void setRawPassword(String rawPassword) {
+		this.rawPassword = rawPassword;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getRole() {
@@ -117,28 +167,20 @@ public class User {
 		this.address = address;
 	}
 
-	public User getSupervisor() {
-		return supervisor;
+	public String getSupervisorFullName() {
+		return supervisorFullName;
 	}
 
-	public void setSupervisor(User supervisor) {
-		this.supervisor = supervisor;
+	public void setSupervisorFullName(String supervisorFullName) {
+		this.supervisorFullName = supervisorFullName;
 	}
 
-	public List<User> getSupervisees() {
-		return supervisees;
+	public String getDepartmentName() {
+		return departmentName;
 	}
 
-	public void setSupervisees(List<User> supervisees) {
-		this.supervisees = supervisees;
-	}
-
-	public Department getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
 
 }
