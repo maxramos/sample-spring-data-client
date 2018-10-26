@@ -3,6 +3,8 @@ package com.maxaramos.springdatatestclient.client;
 import java.io.IOException;
 import java.net.URI;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.http.Header;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpRequest;
@@ -30,7 +32,7 @@ public class DigestAuthHttpComponentsClientHttpRequestFactory extends HttpCompon
 		HttpHost httpHost = new HttpHost(uri.getHost(), uri.getPort(), uri.getScheme());
 		HttpRequest httpRequest = new BasicHttpRequest(httpMethod.toString(), uri.toString());
 		ResponseHandler<Header> responseHandler = response -> {
-			if (response.getStatusLine().getStatusCode() == 401) {
+			if (response.getStatusLine().getStatusCode() == HttpServletResponse.SC_UNAUTHORIZED) {
 				return response.getFirstHeader(AUTH.WWW_AUTH);
 			}
 
@@ -42,7 +44,8 @@ public class DigestAuthHttpComponentsClientHttpRequestFactory extends HttpCompon
 			DigestScheme digestScheme = new DigestScheme();
 
 			if (challengeHeader != null) {
-				digestScheme.processChallenge(challengeHeader); // Initial challenge to get the realm name and nonce.
+				// Process initial challenge to get the required realm name and nonce for the succeeding request.
+				digestScheme.processChallenge(challengeHeader);
 			}
 
 			AuthCache authCache = new BasicAuthCache();
