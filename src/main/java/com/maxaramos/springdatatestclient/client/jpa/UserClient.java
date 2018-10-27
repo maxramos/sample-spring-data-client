@@ -29,12 +29,11 @@ public class UserClient {
 
 	public List<User> getAllUser() {
 		String response = restTemplate.getForObject(jpaWsBaseUrl + "/api/users", String.class);
-
-		JSONArray result = new JSONArray(response);
+		JSONArray usersResult = new JSONArray(response);
 		List<User> users = new ArrayList<>();
 
-		for (int i = 0; i < result.length(); i++) {
-			JSONObject element = result.getJSONObject(i);
+		for (int i = 0; i < usersResult.length(); i++) {
+			JSONObject element = usersResult.getJSONObject(i);
 			User user = new User();
 			user.setId(element.getLong("id"));
 			user.setUsername(element.getString("username"));
