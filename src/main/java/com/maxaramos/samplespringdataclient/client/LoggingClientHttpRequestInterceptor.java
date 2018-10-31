@@ -1,4 +1,4 @@
-package com.maxaramos.springdatatestclient.client;
+package com.maxaramos.samplespringdataclient.client;
 
 import java.io.IOException;
 

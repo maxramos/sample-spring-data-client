@@ -1,1 +1,1 @@
-# spring-data-test-client
+# sample-spring-data-client

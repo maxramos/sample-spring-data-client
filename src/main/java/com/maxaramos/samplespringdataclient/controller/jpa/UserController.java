@@ -1,4 +1,4 @@
-package com.maxaramos.springdatatestclient.controller.jpa;
+package com.maxaramos.samplespringdataclient.controller.jpa;
 
 import java.util.List;
 
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.maxaramos.springdatatestclient.client.jpa.UserClient;
-import com.maxaramos.springdatatestclient.jsonview.BasicView;
-import com.maxaramos.springdatatestclient.jsonview.UserView;
-import com.maxaramos.springdatatestclient.model.User;
+import com.maxaramos.samplespringdataclient.client.jpa.UserClient;
+import com.maxaramos.samplespringdataclient.jsonview.BasicView;
+import com.maxaramos.samplespringdataclient.jsonview.UserView;
+import com.maxaramos.samplespringdataclient.model.User;
 
 @RestController
 @RequestMapping("/jpa/users")

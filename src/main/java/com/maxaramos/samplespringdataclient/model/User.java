@@ -1,10 +1,10 @@
-package com.maxaramos.springdatatestclient.model;
+package com.maxaramos.samplespringdataclient.model;
 
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.maxaramos.springdatatestclient.jsonview.BasicView;
-import com.maxaramos.springdatatestclient.jsonview.UserView;
+import com.maxaramos.samplespringdataclient.jsonview.BasicView;
+import com.maxaramos.samplespringdataclient.jsonview.UserView;
 
 public class User {
 

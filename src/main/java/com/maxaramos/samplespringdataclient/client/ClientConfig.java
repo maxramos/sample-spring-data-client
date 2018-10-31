@@ -1,4 +1,4 @@
-package com.maxaramos.springdatatestclient.client;
+package com.maxaramos.samplespringdataclient.client;
 
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.Credentials;
@@ -18,10 +18,10 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class ClientConfig {
 
-	@Value("${sdtc.ws.username}")
+	@Value("${ssdc.ws.username}")
 	private String username;
 
-	@Value("${sdtc.ws.password}")
+	@Value("${ssdc.ws.password}")
 	private String password;
 
 	@Autowired

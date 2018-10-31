@@ -1,7 +1,7 @@
-package com.maxaramos.springdatatestclient.model;
+package com.maxaramos.samplespringdataclient.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
-import com.maxaramos.springdatatestclient.jsonview.UserView;
+import com.maxaramos.samplespringdataclient.jsonview.UserView;
 
 public class Address {
 

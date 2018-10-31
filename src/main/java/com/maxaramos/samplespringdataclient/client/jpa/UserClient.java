@@ -1,4 +1,4 @@
-package com.maxaramos.springdatatestclient.client.jpa;
+package com.maxaramos.samplespringdataclient.client.jpa;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,14 +14,14 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import com.maxaramos.springdatatestclient.model.Address;
-import com.maxaramos.springdatatestclient.model.GenderType;
-import com.maxaramos.springdatatestclient.model.User;
+import com.maxaramos.samplespringdataclient.model.Address;
+import com.maxaramos.samplespringdataclient.model.GenderType;
+import com.maxaramos.samplespringdataclient.model.User;
 
 @Component
 public class UserClient {
 
-	@Value("${sdtc.ws.jpa.base-url}")
+	@Value("${ssdc.ws.jpa.base-url}")
 	private String jpaWsBaseUrl;
 
 	@Autowired

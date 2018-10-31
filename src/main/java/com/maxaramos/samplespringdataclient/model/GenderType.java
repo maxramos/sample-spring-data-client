@@ -1,4 +1,4 @@
-package com.maxaramos.springdatatestclient.model;
+package com.maxaramos.samplespringdataclient.model;
 
 public enum GenderType {
 
