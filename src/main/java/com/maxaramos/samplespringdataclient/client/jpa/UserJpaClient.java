@@ -19,7 +19,7 @@ import com.maxaramos.samplespringdataclient.model.GenderType;
 import com.maxaramos.samplespringdataclient.model.User;
 
 @Component
-public class UserClient {
+public class UserJpaClient {
 
 	@Value("${ssdc.ws.jpa.base-url}")
 	private String jpaWsBaseUrl;
