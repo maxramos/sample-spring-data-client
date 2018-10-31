@@ -39,7 +39,7 @@ public class ClientConfig {
 				.build();
 
 		return builder
-//				.basicAuthorization(username, password)
+//				.basicAuthentication(username, password)
 				.requestFactory(() -> new HttpComponentsClientHttpRequestFactory(httpClient))
 				.interceptors(loggingClientHttpRequestInterceptor)
 		 		.build();
