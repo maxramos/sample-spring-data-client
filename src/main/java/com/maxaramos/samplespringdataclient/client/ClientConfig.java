@@ -39,7 +39,7 @@ public class ClientConfig {
 				.build();
 
 		return builder
-//				.basicAuthentication(username, password)
+//				.basicAuthorization(username, password) // Preemptive basic auth.
 				.requestFactory(() -> new HttpComponentsClientHttpRequestFactory(httpClient))
 				.interceptors(loggingClientHttpRequestInterceptor)
 		 		.build();
