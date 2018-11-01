@@ -53,7 +53,7 @@ public class UserJpaClient {
 	}
 
 	public User getUser(Long id) {
-		String response = restTemplate.getForObject(jpaWsBaseUrl + "/api/users?id=" + id, String.class);
+		String response = restTemplate.getForObject(jpaWsBaseUrl + "/api/users/" + id, String.class);
 		JSONObject userResult = new JSONObject(response);
 		JSONObject addressResult = userResult.getJSONObject("address");
 
@@ -80,8 +80,8 @@ public class UserJpaClient {
 		user.setGender(GenderType.valueOf(userResult.getString("gender")));
 		user.setContactNumber(userResult.getString("contactNumber"));
 		user.setAddress(address);
-		user.setSupervisorFullName(userResult.getString("supervisorFullName"));
-		user.setDepartmentName(userResult.getString("departmentName"));
+		user.setSupervisorFullName(userResult.optString("supervisorFullName", null));
+		user.setDepartmentName(userResult.optString("departmentName", null));
 
 		return user;
 	}
